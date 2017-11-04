@@ -1,14 +1,17 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const app = require('express')();
-const applications = require('./src/api/applications');
-const bodyParser = require('body-parser');
 
 admin.initializeApp(functions.config().firebase);
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// // Create and Deploy Your First Cloud Functions
+// // https://firebase.google.com/docs/functions/write-firebase-functions
+//
+exports.app = functions.https.onRequest((request, response) => {
 
-app.use('/applications', applications);
-
-exports.api = functions.https.onRequest(app);
+admin.database().ref('/applications').push(app).then(snapshot => {
+    response.send(app);
+}).catch(error => {
+    response.status(500).send({'error': 'internal error in firebase'});
+});
+});
