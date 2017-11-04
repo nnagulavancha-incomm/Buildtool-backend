@@ -1,0 +1,35 @@
+[debug] [2017-11-04T05:32:05.760Z] ----------------------------------------------------------------------
+[debug] [2017-11-04T05:32:05.762Z] Command:       /usr/local/Cellar/node/8.2.1/bin/node /usr/local/bin/firebase serve
+[debug] [2017-11-04T05:32:05.762Z] CLI Version:   3.14.0
+[debug] [2017-11-04T05:32:05.762Z] Platform:      darwin
+[debug] [2017-11-04T05:32:05.762Z] Node Version:  v8.2.1
+[debug] [2017-11-04T05:32:05.763Z] Time:          Sat Nov 04 2017 01:32:05 GMT-0400 (EDT)
+[debug] [2017-11-04T05:32:05.763Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-04T05:32:05.778Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-04T05:32:05.778Z] > authorizing via signed-in user
+[debug] [2017-11-04T05:32:05.780Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fir-practice-2f8de  
+ Sat Nov 04 2017 01:32:05 GMT-0400 (EDT)
+[debug] [2017-11-04T05:32:06.323Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-04T05:32:06.324Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fir-practice-2f8de/tokens  
+ Sat Nov 04 2017 01:32:06 GMT-0400 (EDT)
+[debug] [2017-11-04T05:32:06.721Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/nnagulavancha/Documents/Buildtool/neptune-backend'...
+[info] 
+[debug] [2017-11-04T05:32:06.724Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-practice-2f8de  
+ Sat Nov 04 2017 01:32:06 GMT-0400 (EDT)
+[debug] [2017-11-04T05:32:06.997Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-04T05:32:06.997Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/228501186282/clients/_:getWebAppConfig  
+ Sat Nov 04 2017 01:32:06 GMT-0400 (EDT)
+[debug] [2017-11-04T05:32:07.334Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-04T05:32:07.361Z] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:17)
+    at Object.onceWrapper (events.js:314:30)
+    at emitNone (events.js:105:13)
+    at Server.emit (events.js:207:7)
+    at emitListeningNT (net.js:1346:10)
+    at _combinedTickCallback (internal/process/next_tick.js:135:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.
