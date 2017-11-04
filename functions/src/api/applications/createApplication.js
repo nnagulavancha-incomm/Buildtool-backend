@@ -2,7 +2,7 @@
  * @Author: Naresh Kumar Nagulavancha 
  * @Date: 2017-11-04 00:30:29 
  * @Last Modified by: Naresh Kumar Nagulavancha
- * @Last Modified time: 2017-11-04 01:23:59
+ * @Last Modified time: 2017-11-04 13:34:47
  */
 
 
@@ -14,7 +14,8 @@ const uatCertStr = 'MIIEcTCCA1mgAwIBAgIJAPaCVWFICoVxMA0GCSqGSIb3DQEBBQUAMIGBMQsw
 
 module.exports = (req, res) => {
     var app = JSON.stringify(req.body);
-    admin.database().ref('/applications').push(app).then(snapshot => {
+    var appName = req.body.appName;
+    admin.database().ref('/applications'+appName).push(app).then(snapshot => {
         res.send(app);
     }).catch(error => {
         res.status(500).send({
