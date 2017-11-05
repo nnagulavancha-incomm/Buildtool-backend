@@ -2,7 +2,7 @@
  * @Author: Naresh Kumar Nagulavancha 
  * @Date: 2017-11-04 02:38:12 
  * @Last Modified by: Naresh Kumar Nagulavancha
- * @Last Modified time: 2017-11-04 14:31:08
+ * @Last Modified time: 2017-11-04 22:04:33
  */
 
 const admin = require('firebase-admin');
@@ -11,7 +11,7 @@ module.exports = (req, res) => {
     
     const appID = req.params.app;
     if(appID){
-        admin.database().ref('/applications/' + appID).once("value", (data) => {
+        admin.database().ref('/applications/').orderByChild("name").once("value", (data) => {
             res.status(200).send(data);
         }, (error) => {
             res.status(500).send(error);
